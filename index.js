@@ -22,14 +22,14 @@ conn.connect(function(err){
     if(err) throw err;
     console.log("connection successful")
 })
-// Define a route
+//  ROUTE 1 :  Define a route
 app.get('/', function (req, res) {
 
   res.render('insert');
 
 });
 
-// to insert the values in the database and also in table 
+// ROUTE 2 :  to insert the values in the database and also in table 
 app.post('/insert', function(req,res){
 
     var name=req.body.name;
@@ -46,7 +46,7 @@ app.post('/insert', function(req,res){
     });
 })
 
-// to show the data in the table with new route
+// ROUTE 3 :  to show the data in the table with new route
 app.get('/show',function(req,res){
 
   var sql ="select * from users";
@@ -60,7 +60,7 @@ app.get('/show',function(req,res){
 });
 
 
-// to delete the data from table
+// ROUTE 4 : to delete the data from table
 
 app.get('/delete/:id',function(req,res){
 
@@ -77,7 +77,7 @@ app.get('/delete/:id',function(req,res){
 
 })
 
-// to edit the user details in the table and also in databse
+// ROUTE 5 : to edit the user details in the table and also in databse
 app.get('/edit/:id',function(req,res){
 
   var id=req.params.id;
@@ -93,7 +93,7 @@ app.get('/edit/:id',function(req,res){
 
 })
 
-// to update the values of users data 
+// ROUTE 6 : to update the values of users data 
 app.post('/update/:id',function(req,res){
 
   var id= req.params.id;
